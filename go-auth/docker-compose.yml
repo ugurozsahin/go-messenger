@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   Goauth:
-    image: ugurozsahin/go-auth:${GO_AUTH_VERSION:-latest}
+    image: ugurozsahin/go-auth:v2
     ports:
       - "9000:9000"
     command:
