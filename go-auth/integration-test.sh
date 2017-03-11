@@ -10,7 +10,7 @@ docker-compose up -d
 
 
 # Make sure containers are ready for the test
-sleep 40
+sleep 60
 
 if [ "$(uname -s)" = "Darwin" ] ; then
 	service_ip=$(docker-machine url $(docker-machine active) | cut -d : -f 2 | cut -c 3-)
