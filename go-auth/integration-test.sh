@@ -10,7 +10,7 @@ docker-compose up -d
 
 
 # Make sure containers are ready for the test
-sleep 200
+sleep 20
 
 if [ "$(uname -s)" = "Darwin" ] ; then
 	service_ip=$(docker-machine url $(docker-machine active) | cut -d : -f 2 | cut -c 3-)
@@ -22,8 +22,8 @@ fi
 echo "Using Service IP $service_ip"
 
 
-first=$(curl -i -silent -X PUT -d userid=USERNAME -d password=PASSWORD ${service_ip}:9000/user | grep "HTTP/1.1")
-second=$(curl -i -silent -X PUT -d userid=USERNAME -d password=PASSWORD ${service_ip}:9000/user | grep "HTTP/1.1")
+first=$(curl -i -silent -X PUT -d userid=USERNAME1 -d password=PASSWORD1 ${service_ip}:9000/user | grep "HTTP/1.1")
+second=$(curl -i -silent -X PUT -d userid=USERNAME1 -d password=PASSWORD1 ${service_ip}:9000/user | grep "HTTP/1.1")
 
 status_first=$(echo "$first" | cut -f 2 -d ' ')
 status_second=$(echo "$second" | cut -f 2 -d ' ')
