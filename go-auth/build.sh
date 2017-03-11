@@ -5,4 +5,4 @@ docker run --rm -it \
     -e SOURCE_PATH=go-messenger/go-auth/ \
     usman/go-builder:1.8
 
-docker build -t usman/go-auth .
+docker build -t ugurozsahin/go-auth .
