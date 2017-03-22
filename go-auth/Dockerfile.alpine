@@ -1,0 +1,13 @@
+FROM alpine:3.4
+
+MAINTAINER ugurozsahin@live.com
+
+RUN apk add --no-cache ca-certificates apache2-utils
+
+ADD ./go-auth /bin/go-auth
+
+EXPOSE 9000
+
+ADD run-go-auth.sh /bin/start-go-auth.sh
+
+ENTRYPOINT ["/bin/start-go-auth.sh"]
