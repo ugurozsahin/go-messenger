@@ -1,6 +1,9 @@
 FROM scratch
 
-ADD /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+MAINTAINER ugurozsahin@live.com
+
+RUN mkdir -p /etc/ssl/certs
+ADD etc/certs/ca-certificates.crt /etc/ssl/certs/
 
 ADD ./go-auth /bin/go-auth
 
