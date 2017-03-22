@@ -1,6 +1,6 @@
 FROM scratch
 
-ADD ca-certificates.crt /etc/ssl/certs/
+ADD /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 ADD ./go-auth /bin/go-auth
 

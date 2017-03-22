@@ -3,5 +3,5 @@ set -e
 docker run --rm -i \
     -v $PWD:/go/src/go-messenger/go-auth/ \
     -e SOURCE_PATH=go-messenger/go-auth/ \
-    ugurozsahin/gobuilder
+    ugurozsahin/gobuilder:v0.1
 docker build -t ugurozsahin/go-auth-scratch -f Dockerfile.scratch .
